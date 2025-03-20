@@ -3,10 +3,17 @@
 }
 
 html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    overflow: hidden;
+    color: white;
+    text-align: center;
 }
 
 main {
@@ -18,4 +25,47 @@ main {
 main > h1 {
   text-align: center;
   font-size: 3.5em;
+}
+
+/* Анимированный текст */
+.glow-text {
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4b2b, 0 0 30px #ff4b2b;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4b2b, 0 0 30px #ff4b2b;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff416c, 0 0 40px #ff416c;
+    }
+}
+
+/* Кнопка с эффектом свечения */
+.glow-button {
+    background: transparent;
+    border: 2px solid white;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 0 5px white;
+}
+
+.glow-button:hover {
+    background: white;
+    color: #ff4b2b;
+    box-shadow: 0 0 20px white;
+}
+
+/* Эффект параллакса */
+.container {
+    width: 300px;
+    position: relative;
+    transition: transform 0.1s ease-out;
 }
